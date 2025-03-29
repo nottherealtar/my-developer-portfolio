@@ -99,6 +99,7 @@ export const educationInfo: EducationType[] = [
     subHeader: "Certfitied IT Fundamentals, A+, N+, CCNA",
     duration: "January 2021 - Feb 2022",
     grade: "Grade B",
+    desc: "Completed foundational IT certifications and gained expertise in networking and troubleshooting.",
     descBullets: [
       "Completed CompTIA IT Fundamentals, A+, N+, and CCNA certifications.",
       "Gained foundational knowledge in IT concepts, networking, and security.",
