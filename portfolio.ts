@@ -39,7 +39,7 @@ export const skillsSection: SkillsSectionType = {
   data: [
     {
       title: "Full Stack Development",
-      lottieAnimationFile: dynamic(() => import("/lottie/skills/fullstack.json"), { ssr: false }), // Dynamically import Lottie Animation JSON File
+      lottieAnimationFile: "/lottie/skills/fullstack.json", // Revert to string path
       skills: [
         emoji("⚡ Building scalable and responsive azure solutions using JavaScript"),
         emoji("⚡ Building scalable and responsive web applications using Flask"),
