@@ -12,6 +12,10 @@ import {
   GreetingsType,
 } from "./types/sections";
 
+// Dynamically import Lottie component
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+
+
 export const greetings: GreetingsType = {
   name: "Josh Coetzer",
   title: "Hi all, I'm Josh",
@@ -39,7 +43,7 @@ export const skillsSection: SkillsSectionType = {
   data: [
     {
       title: "Full Stack Development",
-      lottieAnimationFile: "/lottie/skills/fullstack.json", // Revert to string path
+      lottieAnimationFile: "/lottie/skills/fullstack.json", // Path to Lottie animation
       skills: [
         emoji("⚡ Building scalable and responsive azure solutions using JavaScript"),
         emoji("⚡ Building scalable and responsive web applications using Flask"),
