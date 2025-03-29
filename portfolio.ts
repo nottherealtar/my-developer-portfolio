@@ -85,6 +85,16 @@ export const SkillBars: SkillBarsType[] = [
   },
 ];
 
+export const feedbacks: FeedbackType[] = [
+  {
+    name: "Product Manager",
+    feedback: "Josh is a talented developer with a passion for learning and a strong work ethic. He consistently delivers high-quality work and is always looking for ways to improve his skills.",
+    company: "Wetility",
+    companyLogo: "/img/icons/common/ODLS.png",
+    date: "2025",
+  },
+];
+
 export const educationInfo: EducationType[] = [
   {
     schoolName: "Comptia IT",
@@ -103,7 +113,7 @@ export const experience: ExperienceType[] = [
   {
     role: "CRM Config Owner & Full Stack Dev",
     company: "Wetility",
-    companyLogo: "/img/icons/common/meganos.png",
+    companyLogo: "/img/icons/common/ODLS.png",
     date: "Sep 2024 - Present",
     desc: "Managed CRM and CMS platforms, optimized processes, coordinated deployments, integrated third-party software, and led cross-functional collaboration to drive innovation.",
   },
