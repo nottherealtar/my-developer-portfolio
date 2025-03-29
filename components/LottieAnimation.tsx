@@ -15,7 +15,7 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({ animationPath }) => {
   }, []);
 
   if (!isClient) {
-    return null; // Return nothing during SSR
+    return <div>Loading...</div>; // Fallback for SSR
   }
 
   const defaultOptions = {

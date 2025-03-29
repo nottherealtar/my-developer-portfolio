@@ -17,10 +17,14 @@ const SkillCard: React.FC<SkillCardProps> = ({ title, lottieAnimationFile, skill
     setIsClient(true); // Ensure this runs only on the client side
   }, []);
 
+  if (!isClient) {
+    return <div>Loading...</div>; // Fallback for SSR
+  }
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: isClient ? require(`.${lottieAnimationFile}`) : null, // Dynamically require the animation file
+    animationData: require(`.${lottieAnimationFile}`), // Dynamically require the animation file
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -29,7 +33,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ title, lottieAnimationFile, skill
   return (
     <div>
       <h3>{title}</h3>
-      {isClient && <Lottie options={defaultOptions} height={200} width={200} />}
+      <Lottie options={defaultOptions} height={200} width={200} />
       {/* Render skills and softwareSkills */}
     </div>
   );
