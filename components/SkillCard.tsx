@@ -3,7 +3,14 @@ import React from "react";
 
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
-const SkillCard = ({ title, lottieAnimationFile, skills, softwareSkills }) => {
+interface SkillCardProps {
+  title: string;
+  lottieAnimationFile: string;
+  skills: string[];
+  softwareSkills: { skillName: string; iconifyTag: string }[];
+}
+
+const SkillCard: React.FC<SkillCardProps> = ({ title, lottieAnimationFile, skills, softwareSkills }) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
