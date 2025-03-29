@@ -170,27 +170,3 @@ export const seoData: SEODataType = {
     "joshua coetzer wetility",
   ],
 };
-
-// Example of using Lottie in a React component
-export const LottieAnimation = ({ animationPath }: { animationPath: string }) => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true); // Ensure this runs only on the client side
-  }, []);
-
-  if (!isClient) {
-    return null; // Return nothing during SSR
-  }
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: require(`.${animationPath}`), // Dynamically require the animation file
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  return <Lottie options={defaultOptions} height={400} width={400} />;
-};
