@@ -97,7 +97,6 @@ export const educationInfo: EducationType[] = [
   {
     schoolName: "Comptia IT",
     subHeader: "Certfitied IT Fundamentals, A+, N+, CCNA",
-    description: "",
     duration: "January 2021 - Feb 2022",
     grade: "Grade B",
     descBullets: [
