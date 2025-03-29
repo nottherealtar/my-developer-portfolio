@@ -1,4 +1,5 @@
 import emoji from "react-easy-emoji";
+import dynamic from "next/dynamic";
 import {
   EducationType,
   ExperienceType,
@@ -38,7 +39,7 @@ export const skillsSection: SkillsSectionType = {
   data: [
     {
       title: "Full Stack Development",
-      lottieAnimationFile: "/lottie/skills/fullstack.json", // Path of Lottie Animation JSON File
+      lottieAnimationFile: dynamic(() => import("/lottie/skills/fullstack.json"), { ssr: false }), // Dynamically import Lottie Animation JSON File
       skills: [
         emoji("⚡ Building scalable and responsive azure solutions using JavaScript"),
         emoji("⚡ Building scalable and responsive web applications using Flask"),
