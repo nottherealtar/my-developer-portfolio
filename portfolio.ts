@@ -89,7 +89,6 @@ export const feedbacks: FeedbackType[] = [
   {
     name: "Product Manager",
     feedback: "Josh is a talented developer with a passion for learning and a strong work ethic. He consistently delivers high-quality work and is always looking for ways to improve his skills.",
-    date: "2025",
   },
 ];
 
