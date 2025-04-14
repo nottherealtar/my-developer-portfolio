@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 
 type Props = {
@@ -6,6 +6,16 @@ type Props = {
 };
 
 const GreetingLottie = ({ animationPath }: Props) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensure this runs only on the client side
+  }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server side or during hydration mismatch
+  }
+
   const defaultOptions = {
     loop: true,
     autoplay: true,

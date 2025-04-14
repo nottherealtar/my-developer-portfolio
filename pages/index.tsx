@@ -2,10 +2,10 @@ import dynamic from "next/dynamic";
 import React from "react";
 
 // Dynamically import components with SSR disabled where necessary
-const Navigation = dynamic(() => import("../components/Navigation"));
-const Greetings = dynamic(() => import("../containers/Greetings"));
-const Skills = dynamic(() => import("../containers/Skills"));
-const Proficiency = dynamic(() => import("../containers/Proficiency"));
+const Navigation = dynamic(() => import("../components/Navigation"), { ssr: false });
+const Greetings = dynamic(() => import("../containers/Greetings"), { ssr: false });
+const Skills = dynamic(() => import("../containers/Skills"), { ssr: false });
+const Proficiency = dynamic(() => import("../containers/Proficiency"), { ssr: false });
 const Education = dynamic(() => import("../containers/Education"));
 const Experience = dynamic(() => import("../containers/Experience"));
 const Projects = dynamic(() => import("../containers/Projects"));
@@ -30,22 +30,6 @@ export default function Home({ githubProfileData }: { githubProfileData: GithubU
       <Feedbacks />
       <Projects />
       {githubProfileData && <GithubProfileCard {...githubProfileData} />}
-      <SkillCard
-        title="Full Stack Development"
-        lottieAnimationFile="/lottie/skills/fullstack.json"
-        skills={[
-          "Building scalable and responsive azure solutions using JavaScript",
-          "Building scalable and responsive web applications using Flask",
-          "Building tightly integrated solutions for business applications",
-        ]}
-        softwareSkills={[
-          { skillName: "Python", iconifyTag: "logos:python" },
-          { skillName: "JavaScript", iconifyTag: "logos:javascript" },
-          { skillName: "Heroku", iconifyTag: "logos:heroku-icon" },
-          { skillName: "Github", iconifyTag: "akar-icons:github-fill" },
-          { skillName: "Docker", iconifyTag: "logos:docker-icon" },
-        ]}
-      />
     </div>
   );
 }
